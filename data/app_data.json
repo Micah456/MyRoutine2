@@ -1,0 +1,17 @@
+{
+    "Routines" : [ 
+        { 
+            "Name" : "Good Morning",
+            "Steps" : [
+                { 
+                    "Name" : "Brush Teeth",
+                    "Completed": false
+                },
+                { 
+                    "Name" : "Get Dressed",
+                    "Completed" : false
+                }
+            ]
+        } 
+    ]
+}

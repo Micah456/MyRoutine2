@@ -32,15 +32,28 @@ A simpler version of MyRoutine - A demo organisation App in JS and HTML
 JSON structure
 Routine:
 - Name: string
-- Steps: array of strings
+- Steps: array of step objects
 (Note, no id required - id can be based on index in array)
+
+Step:
+- Name: string
+- Completed: bool
 
 #### Example JSON
 `{
     "Routines" : [
         {
             "Name" : "Routine 1",
-            "Steps" : ["Step1", "Step2"]
+            "Steps" : [
+                {
+                    "Name" : "Step1",
+                    "Completed": False
+                }
+                {
+                    "Name" : "Step2"
+                    "Completed" : False
+                }
+            ]
         }
     ]
 }`

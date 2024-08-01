@@ -1,4 +1,4 @@
-from flask import Flask, Response
+from flask import Flask, Response, render_template
 import json, os
 from dotenv import load_dotenv
 
@@ -24,6 +24,10 @@ def get_data():
         return Response(read_app_data(), mimetype='application/json', status=200)
     except:
         return Response(json.dumps({"Message": "Error retrieving data."}), mimetype='application/json', status=500)
+
+@app.route("/app")
+def render_index():
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True, port=port)

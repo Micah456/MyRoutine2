@@ -15,6 +15,7 @@ A simpler version of MyRoutine - A demo organisation App in JS and HTML
 - Display stats
 - Animation
 - Icons
+- Reordering steps during routine creation (if not already possible)
 - Translate to windows/mobile app
 
 ## Structure and Technology

@@ -13,25 +13,33 @@ header {
     padding: 1rem;
     text-align: center;
     height: 20vh;
+    text-shadow: #ffffff 1px 1px ;
 }
 
-#routine-div {
+#routine-btns-div {
     overflow: scroll;
     scrollbar-color:  #5ee4d6 #5e74e4;
     padding: 1rem;
     display: flex;
     flex-direction: column;
     height: 55vh;
-    justify-content: space-between;
-
-    
 }
 
 .routine-btn {
     background: #5ee4d6;
     padding: 1rem;
     border-radius: .5rem;
+    border-width: 0;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: #4e61be 2px 2px;
+    font-weight: 600;
+}
 
+.routine-btn:hover {
+    background: #5e74e4;
+    color: #ffffff;
+    cursor:pointer;
 }
 
 .homepage-btn-div {
@@ -44,14 +52,22 @@ header {
 }
 
 .homepage-btn {
-    color: #5e74e4;
-    background: #ffffff;
+    background: #5e74e4;
+    box-shadow: #ffffff 2px 2px;
+    color:#5ee4d6;
+    border: none;
     text-align: center;
     padding: .5rem;
     width: 75vw;
     font-weight: 800;
     border-radius: .5rem;
+}
 
+.homepage-btn:hover{
+    background: #ffffff;
+    box-shadow: #5e74e4 2px 2px;
+    color: #5e74e4;
+    cursor:pointer;
 }
 
 a {

@@ -48,9 +48,9 @@ Step:
                 {
                     "Name" : "Step1",
                     "Completed": False
-                }
+                },
                 {
-                    "Name" : "Step2"
+                    "Name" : "Step2",
                     "Completed" : False
                 }
             ]

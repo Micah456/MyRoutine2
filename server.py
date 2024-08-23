@@ -29,6 +29,10 @@ def get_data():
 def render_index():
     return render_template("index.html")
 
+@app.route("/app/routine/<routine_id>")
+def render_routine(routine_id):
+    return render_template("routine.html")
+
 if __name__ == "__main__":
     app.run(debug=True, port=port)
     # When no port is specified, starts at default port 5000

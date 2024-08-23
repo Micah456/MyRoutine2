@@ -51,7 +51,7 @@ header {
     height: 15vh;
 }
 
-.homepage-btn {
+.homepage-btn, .routine-page-btn {
     background: #5e74e4;
     box-shadow: #ffffff 2px 2px;
     color:#5ee4d6;
@@ -63,7 +63,7 @@ header {
     border-radius: .5rem;
 }
 
-.homepage-btn:hover{
+.homepage-btn:hover, .routine-page-btn:hover{
     background: #ffffff;
     box-shadow: #5e74e4 2px 2px;
     color: #5e74e4;
@@ -72,4 +72,28 @@ header {
 
 a {
     text-decoration: none;
+}
+
+/* For Routine.html */
+
+.main-div {
+    overflow: scroll;
+    scrollbar-color:  #5ee4d6 #5e74e4;
+    padding: 1rem;
+    height: 55vh;
+}
+
+.running-step{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #5e74e4;
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.routine-page-btn {
+    margin: 1rem;
 }

@@ -1,4 +1,4 @@
-from flask import Flask, Response, render_template
+from flask import Flask, Response, render_template, request
 import json, os
 from dotenv import load_dotenv
 
@@ -18,12 +18,35 @@ def read_app_data():
     f = open(data_file)
     return f.readline()
 
-@app.route("/data")
+def write_app_data(data):
+    """
+    Overwrites data from app into data file. Data file path set in env file.
+    @params data: JSON formatted data to written into file
+    @returns None
+    """
+    print("Overwriting data from: " + data_file)
+    print("Data to write: ")
+    print(data)
+    f = open(data_file, "w")
+    f.write(json.dumps(data))
+    f.close()
+
+@app.route("/data", methods=["GET"])
 def get_data():
     try:
         return Response(read_app_data(), mimetype='application/json', status=200)
     except:
         return Response(json.dumps({"Message": "Error retrieving data."}), mimetype='application/json', status=500)
+    
+
+@app.route("/data", methods=["POST"])
+def update_data():
+    try:
+        write_app_data(request.json)
+        return Response(json.dumps({"Database updated?" : True}), mimetype='application/json', status=200)
+    except Exception as e:
+        print(e)
+        return Response(json.dumps({"Database updated?": False, "Message" : "Error Updating Database."}), mimetype='application/json', status=500)
 
 @app.route("/app")
 def render_index():

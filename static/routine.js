@@ -60,8 +60,17 @@ saveBtnEl.addEventListener('click', () => {
     }
     console.log("Incomplete. Please update server to take incoming data.")
     console.log("Data to send: " + generateJSON())
-    //fetch(`${baseURL}/data`, options)
-    //window.location.href = baseURL + `/app`
+    fetch(`${baseURL}/data`, options)
+        .then(resp => resp.json())
+        .then(rawData => {
+            if(rawData["Database updated?"]){
+                window.alert("Routine Updated Successfully")
+                window.location.href = baseURL + `/app`
+            }
+            else{
+                window.alert("Error Occured: Routine not Updated")
+            }
+        })
 })
 
 fetch(`${baseURL}/data`)

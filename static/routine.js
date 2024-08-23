@@ -73,6 +73,15 @@ saveBtnEl.addEventListener('click', () => {
         })
 })
 
+function clearForm(){
+    console.log("Clearing all inputs")
+    const inputs = runningStepsFormEl.getElementsByTagName('input')
+    console.log(inputs)
+    for(let i = 0; i < inputs.length; i++){
+        inputs[i].checked = false
+    }
+}
+
 fetch(`${baseURL}/data`)
     .then(resp => resp.json())
     .then(rawData => {

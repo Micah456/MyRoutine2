@@ -1,5 +1,5 @@
 from flask import Flask, Response, render_template, request
-import json, os
+import json, os, shutil
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -7,6 +7,7 @@ load_dotenv()
 port = 5016
 app = Flask("MyRoutine2")
 data_file = os.getenv("data_file")
+backup_data_file = os.getenv("backup_data_file")
 
 def read_app_data():
     """
@@ -46,6 +47,8 @@ def update_data():
         return Response(json.dumps({"Database updated?" : True}), mimetype='application/json', status=200)
     except Exception as e:
         print(e)
+        print("Copying backup to data file.")
+        shutil.copyfile(backup_data_file,data_file)
         return Response(json.dumps({"Database updated?": False, "Message" : "Error Updating Database."}), mimetype='application/json', status=500)
 
 @app.route("/app")

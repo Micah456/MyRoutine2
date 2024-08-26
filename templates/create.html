@@ -18,26 +18,26 @@
                         <label for="title-input">Title:</label>
                         <input placeholder="Insert title here" id="title-input" type="text"/>
                     </div>
-                    <ul id="draggable-steps-list">
-                        <li draggable="true">
+                    <ul id="draggable-steps-list" oncontextmenu="return false;">
+                        <li draggable="true" oncontextmenu="this.remove()">
                             Step 1 <img src="/static/grip-vertical.svg">
                         </li>
                         
-                        <li draggable="true">
+                        <li draggable="true" oncontextmenu="this.remove()">
                             Step 2 <img src="/static/grip-vertical.svg">
                         </li>
                     </ul>
                     <div class="add-item-div">
                         <input placeholder="Input step here and press '+' to add" id="add-step-input" type="text"/>
-                        <button id="add-step-btn">+</button>
+                        <button id="add-step-btn" onclick="addStep()">+</button>
                     </div>
                 </div>
             </div>
             <div class=homepage-btn-div>
-                <button id="cancel-btn" class="routine-page-btn">Cancel</button>
-                <button id="save-btn" class="routine-page-btn">Save</button>
+                <button id="cancel-btn" class="routine-page-btn" onclick="cancelRoutine()">Cancel</button>
+                <button id="save-btn" class="routine-page-btn" onclick="saveRoutine()">Save</button>
             </div>
         </main>
-        <script src="/static/routine.js"></script>
+        <script src="/static/create.js"></script>
     </body>
 </html>

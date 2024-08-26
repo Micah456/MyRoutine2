@@ -59,6 +59,10 @@ def render_index():
 def render_routine(routine_id):
     return render_template("routine.html")
 
+@app.route("/app/routine/create")
+def render_create():
+    return render_template("create.html")
+
 @app.route("/data/update_backup")
 def update_backup():
     print("Copying data to backup file.")

@@ -59,6 +59,10 @@ def render_index():
 def render_routine(routine_id):
     return render_template("routine.html")
 
+@app.route("/app/routine/<routine_id>/edit")
+def render_edit(routine_id):
+    return render_template("edit.html")
+
 @app.route("/app/routine/create")
 def render_create():
     return render_template("create.html")

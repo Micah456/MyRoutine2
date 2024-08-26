@@ -67,6 +67,10 @@ def render_edit(routine_id):
 def render_create():
     return render_template("create.html")
 
+@app.route("/app/404")
+def render_404():
+    return render_template("404.html"), 404
+
 @app.route("/data/update_backup")
 def update_backup():
     print("Copying data to backup file.")
@@ -79,6 +83,9 @@ def update_backup():
         response = {"Success" : False, "Message" : "Data Not Backed up", "Error Message" : str(e)}
         return Response(json.dumps(response), mimetype='application/json', status=500)
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("404.html"), 404
 
 if __name__ == "__main__":
     app.run(debug=True, port=port)

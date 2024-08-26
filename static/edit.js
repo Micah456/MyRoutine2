@@ -185,6 +185,9 @@ fetch(`${baseURL}/data`)
     .then(rawData => {
         routines = rawData.Routines
         let routine = routines[getRoutineID()]
+        if(!routine){
+            window.location.href = baseURL + `/app/404`
+        }
         titleInputEl.value = routine.Name
         steps = routine.Steps
         setupSteps()

@@ -91,6 +91,9 @@ fetch(`${baseURL}/data`)
     .then(rawData => {
         routines = rawData.Routines
         let routine = routines[routineID]
+        if(!routine){
+            window.location.href = baseURL + `/app/404`
+        }
         pageH1.innerText = "Routine " + routineID + ": " + routine.Name
         steps = routine.Steps
         setupSteps()

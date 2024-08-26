@@ -103,3 +103,82 @@ a {
     margin: 1rem;
 }
 
+/* For create.html */
+
+.create-routine-div{
+    display: flex;
+    flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.create-routine-div > div,ul{
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #5e74e4;
+    color: white;
+    padding: 1rem;
+}
+
+.title-input-div{
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 1.5rem;
+
+}
+.title-input-div > input{
+    width: 80%;
+    box-sizing: border-box;
+}
+
+#draggable-steps-list {
+    padding: .25rem 1rem;
+}
+
+#draggable-steps-list > li {
+    background-color: #ffffff;
+    padding: 1rem;
+    margin: 1.5rem .5rem;
+    color: #4e61be;
+    font-size: 1.5rem;
+    font-weight: 600;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: grab;
+}
+
+#draggable-steps-list > li:hover{
+    background-color: #f1f1f1;
+}
+
+#draggable-steps-list > li:active{
+    background-color: #5ee4d6;
+}
+
+.add-item-div{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+}
+
+#add-step-input{
+    width: 90%;
+    box-sizing: border-box;
+}
+
+#add-step-btn{
+    background: #ffffff;
+    border: none;
+    border-radius: .3rem;
+    box-shadow: #4e61be 2px 2px;
+    color: #4e61be
+}
+
+#add-step-btn:hover {
+    background: #5ee4d6;
+    cursor:pointer;
+}

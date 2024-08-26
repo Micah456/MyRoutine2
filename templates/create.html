@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Create a Routine</title>
+        <link rel="stylesheet" href="/static/index.css">
+    </head>
+    <body>
+        <main>
+            <header>
+                <h1>Create a Routine</h1>
+                <p>Add a title and steps to your routine.
+                    <br>Right-click a step to delete it.
+                </p>
+            </header>
+            <div class="main-div">
+                <div class="create-routine-div">
+                    <div class="title-input-div">
+                        <label for="title-input">Title:</label>
+                        <input placeholder="Insert title here" id="title-input" type="text"/>
+                    </div>
+                    <ul id="draggable-steps-list">
+                        <li draggable="true">
+                            Step 1 <img src="/static/grip-vertical.svg">
+                        </li>
+                        
+                        <li draggable="true">
+                            Step 2 <img src="/static/grip-vertical.svg">
+                        </li>
+                    </ul>
+                    <div class="add-item-div">
+                        <input placeholder="Input step here and press '+' to add" id="add-step-input" type="text"/>
+                        <button id="add-step-btn">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class=homepage-btn-div>
+                <button id="cancel-btn" class="routine-page-btn">Cancel</button>
+                <button id="save-btn" class="routine-page-btn">Save</button>
+            </div>
+        </main>
+        <script src="/static/routine.js"></script>
+    </body>
+</html>

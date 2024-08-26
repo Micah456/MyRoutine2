@@ -41,6 +41,10 @@ function saveRoutine(){
     }
     //Generate Steps
     let stepsCollectEl = draggableStepsListEl.children
+    if(stepsCollectEl.length == 0){
+        window.alert("Your routine must have at least one step.")
+        return
+    }
     for(let i = 0; i < stepsCollectEl.length; i++){
         let stepText = stepsCollectEl.item(i).innerText
         steps.push({Name : stepText.trim(), Completed : false})

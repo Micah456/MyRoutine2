@@ -1,8 +1,19 @@
 const baseURL = window.location.origin
 const routineBtnsDivEl = document.getElementById("routine-btns-div")
 const createRoutineBtnEl = document.getElementById("create-routine-btn")
+const backupBtnEl = document.getElementById("backup-btn")
 createRoutineBtnEl.addEventListener('click', () => {
     window.location.href += "/routine/create"
+})
+backupBtnEl.addEventListener('click', () => {
+    fetch(`${baseURL}/data/update_backup`)
+    .then(resp => resp.json())
+    .then(rawData => {
+        window.alert(rawData.Message)
+        if(rawData["Error Message"]){
+            console.log("Error : " + rawData["Error Message"])
+        }
+    })
 })
 let routines = []
 

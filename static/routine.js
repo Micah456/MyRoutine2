@@ -58,7 +58,6 @@ saveBtnEl.addEventListener('click', () => {
         },
         body: generateJSON()
     }
-    console.log("Incomplete. Please update server to take incoming data.")
     console.log("Data to send: " + generateJSON())
     fetch(`${baseURL}/data`, options)
         .then(resp => resp.json())

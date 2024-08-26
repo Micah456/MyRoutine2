@@ -59,6 +59,19 @@ def render_index():
 def render_routine(routine_id):
     return render_template("routine.html")
 
+@app.route("/data/update_backup")
+def update_backup():
+    print("Copying data to backup file.")
+    try:
+        shutil.copyfile(data_file,backup_data_file)
+        response = {"Success" : True, "Message" : "Data Backed up Successfully"}
+        return Response(json.dumps(response), mimetype='application/json', status=200)
+    except Exception as e:
+        print(e)
+        response = {"Success" : False, "Message" : "Data Not Backed up", "Error Message" : str(e)}
+        return Response(json.dumps(response), mimetype='application/json', status=500)
+
+
 if __name__ == "__main__":
     app.run(debug=True, port=port)
     # When no port is specified, starts at default port 5000

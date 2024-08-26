@@ -51,6 +51,11 @@ header {
     height: 15vh;
 }
 
+.homepage-btn-div > button {
+    width: 40%;
+    box-sizing: border-box;
+}
+
 .homepage-btn, .routine-page-btn {
     background: #5e74e4;
     box-shadow: #ffffff 2px 2px;

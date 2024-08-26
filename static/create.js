@@ -20,6 +20,12 @@ function addStep(){
     addStepInputEl.value = ""
 }
 
+addStepInputEl.addEventListener('keyup', (e) => {
+    if(e.key == 'Enter'){
+        addStep()
+    }
+})
+
 function cancelRoutine(){
     if (window.confirm("Are you sure you want to exit? Your changes will be lost.")){
         window.location.href = baseURL + `/app`

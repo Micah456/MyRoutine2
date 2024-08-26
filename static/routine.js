@@ -2,6 +2,7 @@ const pageH1 = document.getElementById("page-h1")
 const runningStepsFormEl = document.getElementById("running-steps-form")
 const cancelBtnEl = document.getElementById("cancel-btn")
 const saveBtnEl = document.getElementById("save-btn")
+const editBtnEl = document.getElementById("edit-btn")
 const baseURL = window.location.origin
 const pathname = window.location.pathname
 const routineID = Number(pathname.substring(pathname.lastIndexOf('/') + 1))
@@ -46,6 +47,10 @@ function generateJSON(){
 
 cancelBtnEl.addEventListener('click', () => {
     window.location.href = baseURL + `/app`
+})
+
+editBtnEl.addEventListener('click', () => {
+    window.location.href += "/edit"
 })
 
 saveBtnEl.addEventListener('click', () => {

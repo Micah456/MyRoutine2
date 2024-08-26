@@ -56,7 +56,7 @@ function saveRoutine(){
         headers: {
         'Content-Type': 'application/json',
         },
-        body: JSON.stringify(routines)
+        body: JSON.stringify({Routines : routines})
     }
     fetch(`${baseURL}/data`, options)
         .then(resp => resp.json())
